@@ -27,11 +27,15 @@ public class PatrolMovement : MonoBehaviour
     private bool isAgro = false;
     private bool isSearching;
 
+    HPHandler HPHandler;
+
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         patrolAnimator = patrol.GetComponent<Animator>();
+        HPHandler = GameObject.Find("HPHandler").GetComponent<HPHandler>();
+        
     }
 
     // Update is called once per frame
@@ -81,6 +85,7 @@ public class PatrolMovement : MonoBehaviour
             if(hit.collider.gameObject.CompareTag("Player"))
             {
                 val = true;
+                HPHandler.alert = 3;
                 Debug.Log("TRUE");
             }
             else
