@@ -20450,6 +20450,7 @@ GameObject:
   - component: {fileID: 1427536011}
   - component: {fileID: 1427536010}
   - component: {fileID: 1427536009}
+  - component: {fileID: 1427536013}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -20567,6 +20568,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427536013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427536008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37ddfd32cd5aa9489f118dc7f4e11ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSound: {fileID: 0}
 --- !u!1 &1460048869
 GameObject:
   m_ObjectHideFlags: 0
