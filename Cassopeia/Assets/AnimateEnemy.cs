@@ -6,7 +6,7 @@ public class AnimateEnemy : MonoBehaviour
 {
 
     [SerializeField]
-    float rayDistance = 5f;
+    int rayDistance = 15;
 
     [SerializeField]
     GameObject player;
@@ -51,16 +51,18 @@ public class AnimateEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        raycast = Physics2D.Raycast(transform.position, player.transform.position, rayDistance);
+        //cast a ray and ignore all layers except for player layer
+        raycast = Physics2D.Raycast(transform.position, player.transform.position.normalized, 1 << LayerMask.NameToLayer("Player"), rayDistance);
         if(raycast.collider != null)
         {
             Debug.Log("In range");
+            Debug.Log(raycast.collider);
         }
         else
         {
             Debug.Log("Outside range");
         }
-
-        Debug.DrawRay(transform.position, player.transform.position * rayDistance, Color.green);
+        var playerPosition = player.transform.position.normalized;
+        Debug.DrawRay(transform.position, playerPosition * rayDistance, Color.green);
     }
 }
