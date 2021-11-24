@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\HPHandler.cs" />
     <Compile Include="Assets\Scripts\LoadLibrary.cs" />
     <Compile Include="Assets\AnimateEnemy.cs" />
+    <Compile Include="Assets\LoadLastLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
