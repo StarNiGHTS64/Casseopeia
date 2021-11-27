@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem dust;
 
-    bool hasFlipped = false;
     float prevHorizontal;
 
     Vector2 movement;
