@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProject", "AstarPathfindingProject.csproj", "{F0112F50-1863-7CDD-70F9-6EFFAAD9BFF7}"
 EndProject
@@ -38,6 +38,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EF20B86E-F39F-4CAE-9B21-6996F87648AA}
+		SolutionGuid = {B8F14FE6-2E41-4E4A-8E16-C3C9A6D028DC}
 	EndGlobalSection
 EndGlobal

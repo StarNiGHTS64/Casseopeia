@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class ReturnToLobby : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    GameObject LastEnemy;
+
+    [SerializeField]
+    GameObject NewEnemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("Level 1");        }
+            PlayerData.position = player.transform.position;
+            player.transform.position = new Vector3(39, 7, 0);
+            LastEnemy.SetActive(false);
+            NewEnemy.SetActive(true);
+        }
     }
 }

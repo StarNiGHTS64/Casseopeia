@@ -7,13 +7,19 @@ using TMPro;
 public class HPHandler : MonoBehaviour
 {
     public int hp = 100;
-    public int alert = 0;
+    public int alert;
 
     public TextMeshProUGUI textAlert;
     public GameObject icon;
 
     public Sprite incognito;
-    public Sprite spotted; 
+    public Sprite spotted;
+
+    private void Start()
+    {
+        alert = 0;
+        CurrentState();
+    }
 
     // Update is called once per frame
     void Update()

@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class LoadLibrary : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    GameObject LibraryEnemy;
+
+    [SerializeField]
+    GameObject LastEnemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("Library");
+            PlayerData.position = collision.transform.position;
+            player.transform.position = new Vector3(13, 68, 0);
+            LibraryEnemy.SetActive(true);
+            LastEnemy.SetActive(false);
         }
     }
 }

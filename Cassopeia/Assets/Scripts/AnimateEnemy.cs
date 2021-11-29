@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimateEnemy : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class AnimateEnemy : MonoBehaviour
 
     RaycastHit2D raycast;
     Pathfinding.AILerp aiLerp;
+
+    HPHandler HPHandler;
 
     bool playerSpotted = false;
 
@@ -31,6 +34,7 @@ public class AnimateEnemy : MonoBehaviour
         aiLerp.canMove = false;
         currentX = prevX = rb.transform.position.x;
         currentY = prevY = rb.transform.position.y;
+        HPHandler = GameObject.Find("HPHandler").GetComponent<HPHandler>();
     }
 
     // Update is called once per frame
@@ -78,6 +82,15 @@ public class AnimateEnemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collided");
+        if (collision.transform.tag == "Player")
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
+    }
+
     void SearchForPlayer()
     {
         var rayOrigin = new Vector2(transform.position.x, transform.position.y);
@@ -86,8 +99,10 @@ public class AnimateEnemy : MonoBehaviour
         //cast a ray and ignore all layers except for player layer
         raycast = Physics2D.Raycast(rayOrigin, rayDestination, rayDistance, 1 << LayerMask.NameToLayer("Player"));
 
+        // found player
         if (raycast.collider != null)
         {
+            HPHandler.alert = 3;
             aiLerp.canMove = true;
             playerSpotted = true;
         }
@@ -98,9 +113,11 @@ public class AnimateEnemy : MonoBehaviour
     {
         var inRange = false;
         var distance = Vector2.Distance(transform.position, player.transform.position);
+        // has lost view of player
         if(distance > rayDistance)
         {
             inRange = false;
+            HPHandler.alert = 0;
         }
         else
         {
@@ -108,4 +125,6 @@ public class AnimateEnemy : MonoBehaviour
         }
         return inRange;
     }
+
+    
 }

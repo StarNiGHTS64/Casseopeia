@@ -5,37 +5,23 @@ using UnityEngine;
 
 public class LoadBuilding2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    GameObject LastEnemy;
 
-    /*
-     void Awake()
-     {
-         DontDestroyOnLoad(this.gameObject);
-
-     }
-
-    https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager-sceneLoaded.html
-
-     
-     */
-
-
+    [SerializeField]
+    GameObject NextEnemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("Building 2");
+            PlayerData.position = player.transform.position;
+            player.transform.position = new Vector3(82, 13, 0);
+            LastEnemy.SetActive(false);
+            NextEnemy.SetActive(true);
         }
     }
 }

@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LoadLastLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    GameObject LastEnemy;
+
+    [SerializeField]
+    GameObject NewEnemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("LastLevel");
+            PlayerData.position = player.transform.position;
+            player.transform.position = new Vector3(170, 5, 0);
+            LastEnemy.SetActive(false);
+            NewEnemy.SetActive(true);
         }
     }
 }

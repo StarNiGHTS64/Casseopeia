@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-    public GameObject EndScreen;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            EndScreen.gameObject.SetActive(true);
+            if (PlayerData.keyCount == 6)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
+            else
+            {
+                // you havent collected all keys message
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        transform.position.Set(PlayerData.position.x, PlayerData.position.y, 0);
         prevHorizontal = Input.GetAxisRaw("Horizontal");
+        PlayerData.keyCount = 0;
     }
 
     // Update is called once per frame
@@ -47,5 +50,6 @@ public class PlayerMovement : MonoBehaviour
     {
         dust.Play();
     }
+
 }
 

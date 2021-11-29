@@ -13,6 +13,8 @@ public class Pickup : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Player")){
+            PlayerData.keyCount++;
+
             for (int i = 0; i < Inventory.Slots.Length; i++)
             {
                 if (Inventory.Taken[i] == false)
