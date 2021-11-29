@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PatrolMovement : MonoBehaviour
 {
     [SerializeField]
@@ -64,7 +64,13 @@ public class PatrolMovement : MonoBehaviour
             ChasePlayer();
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
+    }
     bool CanSeePlayer(float distance)
     {
         bool val = false;
