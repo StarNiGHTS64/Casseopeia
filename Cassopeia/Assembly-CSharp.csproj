@@ -54,18 +54,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LoadDownstairs.cs" />
+    <Compile Include="Assets\LoadLastLevel.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PatrolMovement.cs" />
     <Compile Include="Assets\LoadBuilding2.cs" />
     <Compile Include="Assets\Scripts\ReturnToLobby.cs" />
+    <Compile Include="Assets\Scripts\LoseState.cs" />
     <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\Scripts\KeyHandler.cs" />
     <Compile Include="Assets\Scripts\HPHandler.cs" />
     <Compile Include="Assets\Scripts\LoadLibrary.cs" />
     <Compile Include="Assets\AnimateEnemy.cs" />
-    <Compile Include="Assets\LoadLastLevel.cs" />
+    <Compile Include="Assets\Scripts\WinScreen.cs" />
+    <Compile Include="Assets\Scripts\WinState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
