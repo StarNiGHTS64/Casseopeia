@@ -64,16 +64,17 @@
     <Compile Include="Assets\Scripts\PatrolMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\LoadBuilding2.cs" />
+    <Compile Include="Assets\Scripts\ReturnToBuilding2.cs" />
     <Compile Include="Assets\Scripts\ReturnToLobby.cs" />
     <Compile Include="Assets\Scripts\LoseState.cs" />
     <Compile Include="Assets\Scripts\InventoryCTRL.cs" />
+    <Compile Include="Assets\Scripts\QuitGame.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\KeyHandler.cs" />
     <Compile Include="Assets\Scripts\HPHandler.cs" />
     <Compile Include="Assets\Scripts\LoadLibrary.cs" />
     <Compile Include="Assets\Scripts\AnimateEnemy.cs" />
-    <Compile Include="Assets\Scripts\ReturnToBuilding2.cs" />
-    <Compile Include="Assets\Scripts\QuitGame.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

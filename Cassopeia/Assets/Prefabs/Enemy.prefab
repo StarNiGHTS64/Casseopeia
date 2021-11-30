@@ -240,3 +240,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayDistance: 10
   player: {fileID: 0}
+  NormalClip: {fileID: 8300000, guid: f870ce41f30bcd547a53d3960ca4bea5, type: 3}
+  ChaseClip: {fileID: 8300000, guid: d3b985ac847c43c4cb99fa62decaaf02, type: 3}

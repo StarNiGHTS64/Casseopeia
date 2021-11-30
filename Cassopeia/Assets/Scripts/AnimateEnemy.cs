@@ -25,6 +25,12 @@ public class AnimateEnemy : MonoBehaviour
     float prevY;
     float currentY;
     Animator anim;
+
+    // music handles
+    public AudioClip NormalClip;
+    public AudioClip ChaseClip;
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +41,7 @@ public class AnimateEnemy : MonoBehaviour
         currentX = prevX = rb.transform.position.x;
         currentY = prevY = rb.transform.position.y;
         HPHandler = GameObject.Find("HPHandler").GetComponent<HPHandler>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -105,6 +112,7 @@ public class AnimateEnemy : MonoBehaviour
             HPHandler.alert = 3;
             aiLerp.canMove = true;
             playerSpotted = true;
+            audioManager.ChangeBGM(ChaseClip);
         }
         Debug.DrawRay(rayOrigin, rayDestination.normalized * rayDistance, Color.green);
     }
@@ -118,6 +126,7 @@ public class AnimateEnemy : MonoBehaviour
         {
             inRange = false;
             HPHandler.alert = 0;
+            audioManager.ChangeBGM(NormalClip);
         }
         else
         {
